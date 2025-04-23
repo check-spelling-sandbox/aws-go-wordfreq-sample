@@ -53,5 +53,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("succesffully created", tableName)
+	fmt.Println("successfully created", tableName)
 }

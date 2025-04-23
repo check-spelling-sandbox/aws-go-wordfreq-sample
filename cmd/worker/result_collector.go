@@ -47,7 +47,7 @@ func (r *ResultCollector) ProcessJobResult(resultCh <-chan *wordfreq.JobResult) 
 		fmt.Println("Received job result", message.ID)
 
 		if result.Status == wordfreq.JobCompleteSuccess {
-			fmt.Println("Succesffuly processed job", message.ID)
+			fmt.Println("Successfully processed job", message.ID)
 
 			// Record result to dynamoDB, and delete message if successful
 			// if the writing to dynamoDB fails, don't delete the message
