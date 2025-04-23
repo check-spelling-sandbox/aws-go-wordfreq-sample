@@ -35,7 +35,7 @@ import (
 // requests to. This parameter is only optional if the service is running within
 // an EC2 instance. If not running in an EC2 instance AWS_REGION is required.
 //
-// * WORKER_MESSAGE_VISIBILITY - The ammount of time messges will be hidden in
+// * WORKER_MESSAGE_VISIBILITY - The amount of time messges will be hidden in
 // the SQS job message queue from other services when a service reads that message.
 // Will also be used to extend the visibility timeout for long running jobs.
 // Defaults to 60s.
