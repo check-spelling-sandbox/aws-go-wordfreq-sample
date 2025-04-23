@@ -13,7 +13,7 @@ import (
 // is added to the job channel so a worker from the worker pool can read it,
 // and process the job.
 func parseJobMessage(jobCh chan<- *wordfreq.Job, msg wordfreq.JobMessage, timeout int64) error {
-	fmt.Println("Procesing message", msg.ID)
+	fmt.Println("Processing message", msg.ID)
 
 	s3msg := s3EventMsg{}
 	if err := json.Unmarshal([]byte(msg.Body), &s3msg); err != nil {
