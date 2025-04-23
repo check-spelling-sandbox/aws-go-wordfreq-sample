@@ -55,7 +55,7 @@ func (r *ResultCollector) ProcessJobResult(resultCh <-chan *wordfreq.JobResult) 
 			if err := r.recorder.Record(result); err != nil {
 				result.Status = wordfreq.JobCompleteFailure
 				result.StatusMessage = fmt.Sprintf("record results failed, %v", err)
-				log.Println("failed to recored result", message.ID, err)
+				log.Println("failed to recorded result", message.ID, err)
 			} else {
 				err := r.queue.DeleteMessage(message.ReceiptHandle)
 				if err != nil {
