@@ -44,7 +44,7 @@ func (r *ResultCollector) ProcessJobResult(resultCh <-chan *wordfreq.JobResult) 
 			return
 		}
 		message := result.Job.OrigMessage
-		fmt.Println("Recived job result", message.ID)
+		fmt.Println("Received job result", message.ID)
 
 		if result.Status == wordfreq.JobCompleteSuccess {
 			fmt.Println("Succesffuly processed job", message.ID)
