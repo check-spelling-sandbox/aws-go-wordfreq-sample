@@ -39,12 +39,12 @@ func (r *ResultRecorder) Record(result *wordfreq.JobResult) error {
 		recordItem.Words[w.Word] = w.Count
 	}
 
-	// Use the ConvertToX helpers to marshal a Go struct to a dyanmodb.AttributeValue
+	// Use the ConvertToX helpers to marshal a Go struct to a dynamodb.AttributeValue
 	// type. This greatly simplifies the code needed to create the attribute
 	// value item.
 	av, err := dynamodbattribute.ConvertToMap(recordItem)
 	if err != nil {
-		return fmt.Errorf("unable to serialize result to dyanmoDB.AttributeValue, %v", err)
+		return fmt.Errorf("unable to serialize result to dynamodb.AttributeValue, %v", err)
 	}
 	_, err = r.svc.PutItem(&dynamodb.PutItemInput{
 		TableName: aws.String(r.tableName),
