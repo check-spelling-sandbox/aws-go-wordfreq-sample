@@ -28,7 +28,7 @@ func NewResultRecorder(tableName string, svc dynamodbiface.DynamoDBAPI) *ResultR
 }
 
 // Record marshals the job result into a dynamodb.AttributeValue struct, and writes
-// the result item to DyanmoDB.
+// the result item to DynamoDB.
 func (r *ResultRecorder) Record(result *wordfreq.JobResult) error {
 	// Construct a result item representing what data we want to write to DynamoDB.
 	recordItem := resultRecord{
